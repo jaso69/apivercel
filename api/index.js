@@ -10,11 +10,6 @@ app.use(express.json());
 
 const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY;
 
-if (!DEEPSEEK_API_KEY) {
-  console.error("❌ Error: DEEPSEEK_API_KEY no está definida.");
-  // En serverless no hacemos process.exit()
-}
-
 // Ruta para enviar consultas a DeepSeek API
 app.post('/ask-deepseek', async (req, res) => {
   try {
@@ -35,6 +30,7 @@ app.post('/ask-deepseek', async (req, res) => {
           Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
           'Content-Type': 'application/json',
         },
+        timeout: 9000, // <= Tiempo máximo antes de abortar la petición (menos que 10s de Vercel)
       }
     );
 
