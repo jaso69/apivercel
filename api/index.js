@@ -30,7 +30,6 @@ module.exports = async (req, res) => {
           Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
           'Content-Type': 'application/json',
         },
-        timeout: 9000,
       }
     );
 
