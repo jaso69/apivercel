@@ -1,8 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const serverless = require('serverless-http'); // <-- Necesario para Vercel
-require('dotenv').config();
 
 const app = express();
 app.use(cors());
