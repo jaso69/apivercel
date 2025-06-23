@@ -32,7 +32,21 @@ module.exports = async (req, res) => {
       'https://api.deepseek.com/v1/chat/completions',
       {
         model: "deepseek-chat",
-        messages: [{ role: "user", content: prompt }],
+        messages: [
+          // Mensaje de sistema (contexto del asistente)
+          {
+            role: "system",
+            content: "Eres un asistente de Lilly, especializado en documentación médica y farmacéutica. " +
+                    "Responde de manera profesional, precisa y basada en datos científicos. " +
+                    "Si no sabes algo, di que no tienes esa información pero ofrécele al usuario " +
+                    "contactar con el departamento correspondiente."
+          },
+          // Mensaje del usuario (prompt)
+          {
+            role: "user",
+            content: prompt
+          }
+        ],
         temperature: 0.7,
       },
       {
