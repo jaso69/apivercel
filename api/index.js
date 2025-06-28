@@ -155,6 +155,7 @@ module.exports = async (req, res) => {
     	tu tarea es responder a lo que te preguntan o brindarles la informacion necesaria. Y con la informacion que te proporcione, responder y con los manuales que necesites para realizar el trabajo.
 	Si fuera necesario la intervencion de un especialista, tienes que ofrecer el servicio 
 	de RPG
+ 	No uses marcado markdown en la respuesta, usa texo plano con emoticonos
               `
             },
             {
